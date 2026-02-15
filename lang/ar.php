@@ -1,26 +1,26 @@
 <?php
 /**
  * ============================================
- * Arabic Language File (العربية)
+ * ملف اللغة العربية (Arabic) - كامل
  * ============================================
  */
 
 return [
-    // Navigation & Menu
+    // التنقل والقائمة (Navigation & Menu)
     'home' => 'الرئيسية',
     'dashboard' => 'لوحة التحكم',
     'profile' => 'الملف الشخصي',
     'login' => 'تسجيل الدخول',
     'logout' => 'تسجيل الخروج',
-    'register' => 'التسجيل',
-    'about' => 'حول',
+    'register' => 'إنشاء حساب',
+    'about' => 'من نحن',
     'contact' => 'اتصل بنا',
     'privacy' => 'الخصوصية',
-    'terms' => 'شروط الاستخدام',
+    'terms' => 'شروط الخدمة',
     'my_account' => 'حسابي',
     'settings' => 'الإعدادات',
     
-    // Common Actions
+    // إجراءات شائعة (Common Actions)
     'save' => 'حفظ',
     'cancel' => 'إلغاء',
     'delete' => 'حذف',
@@ -30,38 +30,42 @@ return [
     'back' => 'رجوع',
     'next' => 'التالي',
     'previous' => 'السابق',
-    'continue' => 'متابعة',
+    'continue' => 'استمرار',
     'close' => 'إغلاق',
     'confirm' => 'تأكيد',
     'view' => 'عرض',
     'view_all' => 'عرض الكل',
     'loading' => 'جاري التحميل...',
+    'processing' => 'جاري المعالجة',
+    'go_home' => 'الذهاب للرئيسية',
+    'go_back' => 'العودة للخلف',
     
-    // User & Authentication
-    'welcome' => 'مرحبا',
-    'welcome_back' => 'مرحبا بعودتك',
-    'hello' => 'مرحبا',
+    // المستخدم والمصادقة (User & Authentication)
+    'welcome' => 'مرحباً',
+    'welcome_back' => 'مرحباً بعودتك',
+    'continue_learning' => 'واصل رحلتك التعليمية',
+    'hello' => 'أهلاً',
     'email' => 'البريد الإلكتروني',
     'password' => 'كلمة المرور',
     'password_confirm' => 'تأكيد كلمة المرور',
     'first_name' => 'الاسم الأول',
-    'last_name' => 'اسم العائلة',
+    'last_name' => 'الاسم الأخير',
     'remember_me' => 'تذكرني',
     'forgot_password' => 'نسيت كلمة المرور؟',
     'create_account' => 'إنشاء حساب',
-    'already_have_account' => 'هل لديك حساب بالفعل؟',
+    'already_have_account' => 'لديك حساب بالفعل؟',
     'dont_have_account' => 'ليس لديك حساب؟',
     
-    // Educational Content
+    // المحتوى التعليمي (Educational Content)
     'lessons' => 'الدروس',
     'lesson' => 'درس',
     'subjects' => 'المواد',
-    'subject' => 'مادة',
+    'subject' => 'المادة',
     'levels' => 'المستويات',
-    'level' => 'مستوى',
+    'level' => 'المستوى',
     'progress' => 'التقدم',
     'my_progress' => 'تقدمي',
-    'start_lesson' => 'بدء الدرس',
+    'start_lesson' => 'ابدأ الدرس',
     'continue_lesson' => 'متابعة الدرس',
     'quiz' => 'اختبار',
     'take_quiz' => 'إجراء الاختبار',
@@ -69,96 +73,181 @@ return [
     'difficulty' => 'الصعوبة',
     'duration' => 'المدة',
     'description' => 'الوصف',
+    'title' => 'العنوان',
+    'video_url' => 'رابط الفيديو',
+    'content' => 'المحتوى',
+    'order' => 'الترتيب',
+    'views' => 'المشاهدات',
+    'actions' => 'الإجراءات',
+    'status' => 'الحالة',
+    'minutes' => 'دقائق',
+    'free' => 'مجاني',
     
-    // Difficulty Levels
+    // مستويات الصعوبة (Difficulty Levels)
     'easy' => 'سهل',
     'medium' => 'متوسط',
     'hard' => 'صعب',
     
-    // Status
+    // الحالة (Status)
     'not_started' => 'لم يبدأ',
-    'in_progress' => 'قيد التقدم',
+    'in_progress' => 'قيد التنفيذ',
     'completed' => 'مكتمل',
+    'active' => 'نشط',
+    'inactive' => 'غير نشط',
     
-    // Messages
+    // الرسائل (Messages)
     'success' => 'نجاح',
     'error' => 'خطأ',
     'warning' => 'تحذير',
     'info' => 'معلومات',
     
-    // Validation
+    // التحقق (Validation)
     'required' => 'هذا الحقل مطلوب',
-    'invalid_email' => 'البريد الإلكتروني غير صالح',
-    'password_too_short' => 'يجب أن تكون كلمة المرور 8 أحرف على الأقل',
+    'invalid_email' => 'عنوان بريد إلكتروني غير صالح',
+    'password_too_short' => 'يجب أن تتكون كلمة المرور من 8 أحرف على الأقل',
     'passwords_dont_match' => 'كلمات المرور غير متطابقة',
     'invalid_credentials' => 'بيانات الاعتماد غير صالحة',
     
-    // Statistics
+    // الإحصائيات (Statistics)
     'total_lessons' => 'إجمالي الدروس',
     'lessons_completed' => 'الدروس المكتملة',
-    'total_time_spent' => 'الوقت الإجمالي',
+    'lessons_in_progress' => 'دروس قيد الدراسة',
+    'total_time_spent' => 'إجمالي الوقت المستغرق',
     'average_score' => 'متوسط النتيجة',
+    'current_level' => 'المستوى الحالي',
+    'total_xp' => 'إجمالي نقاط الخبرة (XP)',
+    'to_next_level' => 'للمستوى التالي',
     
-    // Footer
+    // لوحة الإدارة (Admin Panel)
+    'admin_panel' => 'لوحة الإدارة',
+    'main' => 'الرئيسية',
+    'users' => 'المستخدمين',
+    'manage_users' => 'إدارة المستخدمين',
+    'manage_lessons' => 'إدارة الدروس',
+    'manage_subjects' => 'إدارة المواد',
+    'manage_levels' => 'إدارة المستويات',
+    'add_new_lesson' => 'إضافة درس جديد',
+    'edit_lesson' => 'تعديل الدرس',
+    'create_edit_lessons' => 'إنشاء وتعديل الدروس',
+    'select_subject' => 'اختر المادة',
+    'free_lesson' => 'درس مجاني',
+    'confirm_delete_lesson' => 'هل أنت متأكد من حذف هذا الدرس؟',
+    'user' => 'مستخدم',
+    'role' => 'الدور',
+    'last_login' => 'آخر تسجيل دخول',
+    'never' => 'أبداً',
+    'total_users' => 'إجمالي المستخدمين',
+    'active_users' => 'المستخدمين النشطين',
+    'admins' => 'المشرفين',
+    'students' => 'الطلاب',
+    'manage_all_users' => 'إدارة جميع المستخدمين',
+    'change_language' => 'تغيير اللغة',
+    
+    // التذييل (Footer)
     'all_rights_reserved' => 'جميع الحقوق محفوظة',
-    'follow_us' => 'تابعنا',
+    'follow_us' => 'تابعنا على',
     'quick_links' => 'روابط سريعة',
+    'help_support' => 'المساعدة والدعم',
+    'documentation' => 'الوثائق',
     
-    // Hero
-    'hero_title' => 'تعلم بلا حدود مع InfinityFree',
-    'hero_subtitle' => 'منصة تعليمية شاملة مع دورات بالفرنسية والإنجليزية والعربية',
-    'get_started' => 'ابدأ مجانا',
+    // القسم الرئيسي (Hero)
+    'hero_title' => 'تعلم بدون حدود مع InfinityFree',
+    'hero_title_part1' => 'تعلم',
+    'hero_title_part2' => ' بدون حدود',
+    'hero_subtitle' => 'منصة تعليمية شاملة مع دورات باللغات الفرنسية والإنجليزية والعربية',
+    'get_started' => 'ابدأ مجاناً',
     'explore_courses' => 'استكشف الدورات',
     
-    // Features
+    // الميزات (Features)
     'why_choose_us' => 'لماذا تختار InfinityFree؟',
     'feature_multilingual' => 'محتوى متعدد اللغات',
-    'feature_multilingual_desc' => 'جميع الدورات متاحة بالفرنسية والإنجليزية والعربية',
+    'feature_multilingual_desc' => 'جميع الدورات متاحة باللغات الفرنسية والإنجليزية والعربية',
     'feature_tracking' => 'تتبع التقدم',
     'feature_tracking_desc' => 'تتبع تقدمك ونتائجك في الوقت الفعلي',
     'feature_quizzes' => 'اختبارات تفاعلية',
-    'feature_quizzes_desc' => 'اختبر معرفتك مع اختبارات قابلة للتكيف',
+    'feature_quizzes_desc' => 'اختبر معلوماتك من خلال اختبارات متطورة',
     'feature_security' => 'آمن 100%',
-    'feature_security_desc' => 'بياناتك محمية بتشفير متقدم',
+    'feature_security_desc' => 'بياناتك محمية بتقنيات تشفير متقدمة',
     
-    // Language Names
+    // أسماء اللغات (Language Names)
     'lang_fr' => 'Français',
     'lang_en' => 'English',
     'lang_ar' => 'العربية',
     
-    // Authentication
+    // المصادقة (Authentication)
     'full_name' => 'الاسم الكامل',
     'grade_level' => 'المستوى الدراسي',
     'select_level' => 'اختر مستواك',
+    'select_your_level' => 'اختر مستواك الدراسي',
     'confirm_password' => 'تأكيد كلمة المرور',
-    'password_requirements' => 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل',
+    'password_requirements' => 'يجب أن تكون كلمة المرور 8 أحرف على الأقل',
     'already_registered' => 'مسجل بالفعل؟',
-    'login_here' => 'تسجيل الدخول هنا',
-    'not_registered' => 'لم تسجل بعد؟',
-    'register_here' => 'سجل هنا',
+    'login_here' => 'سجل دخولك هنا',
+    'not_registered' => 'غير مسجل بعد؟',
+    'register_here' => 'أنشئ حساباً هنا',
     
-    // Success Messages
+    // رسائل النجاح (Success Messages)
     'registration_success' => 'تم التسجيل بنجاح! يمكنك الآن تسجيل الدخول.',
-    'login_success' => 'تم تسجيل الدخول بنجاح! جاري التحويل...',
-    'logout_success' => 'تم تسجيل الخروج بنجاح. نراك قريبا!',
+    'login_success' => 'تم تسجيل الدخول بنجاح! جاري التوجيه...',
+    'logout_success' => 'تم تسجيل الخروج بنجاح. نراك قريباً!',
+    'lesson_completed' => 'اكتمل الدرس',
     
-    // Error Messages
+    // رسائل الخطأ (Error Messages)
     'registration_failed' => 'فشل التسجيل. يرجى المحاولة مرة أخرى.',
-    'login_failed' => 'فشل تسجيل الدخول. تحقق من بيانات الاعتماد.',
+    'login_failed' => 'فشل تسجيل الدخول. تحقق من بياناتك.',
     'email_exists' => 'عنوان البريد الإلكتروني هذا مستخدم بالفعل.',
     'password_mismatch' => 'كلمات المرور غير متطابقة.',
     'invalid_csrf' => 'رمز الأمان غير صالح. يرجى المحاولة مرة أخرى.',
     'all_fields_required' => 'جميع الحقول مطلوبة.',
-    'weak_password' => 'كلمة المرور ضعيفة جدا.',
-    'invalid_email_format' => 'تنسيق البريد الإلكتروني غير صالح.',
+    'weak_password' => 'كلمة المرور ضعيفة جداً.',
+    'invalid_email_format' => 'صيغة البريد الإلكتروني غير صحيحة.',
     'account_created' => 'تم إنشاء الحساب بنجاح',
-    'welcome_message' => 'مرحبا بك في InfinityFree',
-    'login_to_continue' => 'تسجيل الدخول للمتابعة',
+    'welcome_message' => 'مرحباً بك في InfinityFree',
+    'login_to_continue' => 'سجل الدخول للمتابعة',
     'create_your_account' => 'أنشئ حسابك',
     'or' => 'أو',
-    'too_many_attempts' => 'محاولات كثيرة جدا. يرجى المحاولة مرة أخرى في وقت لاحق.',
-    'invalid_level' => 'مستوى غير صالح محدد.',
+    'too_many_attempts' => 'محاولات كثيرة جداً. يرجى المحاولة لاحقاً.',
+    'invalid_level' => 'المستوى المحدد غير صالح.',
+    'invalid_lesson' => 'درس غير صالح',
+    'lesson_not_found' => 'الدرس غير موجود',
+    'unauthorized_access' => 'دخول غير مصرح به',
+    'account_inactive' => 'الحساب غير نشط',
+    'error_occurred' => 'حدث خطأ ما',
+    'connection_error' => 'خطأ في الاتصال',
+    'page_not_found' => 'الصفحة غير موجودة',
+    'page_not_found_message' => 'الصفحة التي تبحث عنها غير موجودة أو تم نقلها.',
+    
+    // النشاط والتقدم (Activity & Progress)
     'recent_activity' => 'النشاط الأخير',
-    'lessons_in_progress' => 'الدروس قيد التقدم',
-    'no_recent_activity' => 'لا يوجد نشاط حديث',
+    'no_recent_activity' => 'لا يوجد نشاط أخير',
+    'no_data' => 'لا توجد بيانات متاحة',
+    'no_levels_available' => 'لا توجد مستويات متاحة',
+    'no_subjects_available' => 'لا توجد مواد متاحة',
+    'no_lessons_available' => 'لا توجد دروس متاحة',
+    'explore_this_level' => 'استكشف هذا المستوى',
+    'back_to_levels' => 'العودة للمستويات',
+    'back_to_level' => 'العودة للمستوى',
+    
+    // صفحة الدرس (Lesson Page)
+    'anti_cheat_notice' => 'تنبيه منع الغش',
+    'please_watch_full_video' => 'يرجى مشاهدة الفيديو كاملاً للحصول على نقاط الخبرة (XP)',
+    'no_skipping_allowed' => 'غير مسموح بتخطي أجزاء من الفيديو',
+    'claim_xp' => 'الحصول على نقاط XP',
+    'complete_lesson_instruction' => 'أكمل الدرس للمطالبة بنقاط الخبرة الخاصة بك',
+    'xp_already_awarded' => 'تم منح نقاط XP بالفعل لهذا الدرس',
+    'just_now' => 'الآن',
+    'hours' => 'ساعات',
+    'days' => 'أيام',
+    
+    // ترجمات DataTables
+    'show' => 'عرض',
+    'entries' => 'مدخلات',
+    'showing' => 'عرض',
+    'to' => 'إلى',
+    'of' => 'من أصل',
+    'no_entries' => 'لا توجد مدخلات',
+    'filtered_from' => 'مصفاة من',
+    'total' => 'المجموع',
+    'first' => 'الأول',
+    'last' => 'الأخير',
 ];

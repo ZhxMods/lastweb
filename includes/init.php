@@ -2,7 +2,7 @@
 /**
  * ============================================
  * InfinityFree Application Initializer
- * Main entry point for all pages
+ * Main entry point for all pages - FIXED VERSION
  * ============================================
  */
 
@@ -54,7 +54,7 @@ if (isLoggedIn()) {
     // Verify session is still valid
     if (!verifySessionToken($_SESSION['user_id'], $_SESSION['user_token'])) {
         destroyUserSession();
-        redirect('/login');
+        redirect('/login.php');
     }
 }
 
@@ -114,8 +114,70 @@ function asset(string $path): string {
 }
 
 /**
- * Generate URL with language prefix if needed
+ * Generate URL - FIXED for InfinityFree
+ * Adds .php extension for compatibility when mod_rewrite might fail
  */
 function url(string $path): string {
-    return APP_URL . '/' . ltrim($path, '/');
+    $path = ltrim($path, '/');
+    
+    // If path is empty, return home
+    if (empty($path)) {
+        return APP_URL . '/index.php';
+    }
+    
+    // Check if path already has an extension
+    if (preg_match('/\.(php|html|htm)$/i', $path)) {
+        return APP_URL . '/' . $path;
+    }
+    
+    // Main pages that need .php extension for InfinityFree
+    $mainPages = [
+        'login' => 'login.php',
+        'register' => 'register.php',
+        'logout' => 'logout.php',
+        'dashboard' => 'dashboard.php',
+        'profile' => 'profile.php',
+        'levels' => 'levels.php',
+        'subjects' => 'subjects.php',
+        'about' => 'about.php',
+        'contact' => 'contact.php',
+        'privacy' => 'privacy.php',
+        'terms' => 'terms.php',
+        'help' => 'help.php',
+        'documentation' => 'documentation.php',
+        'settings' => 'settings.php',
+        'auth' => 'auth.php',
+        'set_language' => 'set_language.php'
+    ];
+    
+    // Extract the first part of the path
+    $pathParts = explode('/', $path);
+    $firstPart = $pathParts[0];
+    
+    // Remove query string if present
+    $cleanFirstPart = explode('?', $firstPart)[0];
+    
+    // If it's a main page, add .php extension
+    if (isset($mainPages[$cleanFirstPart])) {
+        // Preserve query string
+        if (str_contains($path, '?')) {
+            $parts = explode('?', $path, 2);
+            return APP_URL . '/' . $mainPages[$cleanFirstPart] . '?' . $parts[1];
+        }
+        return APP_URL . '/' . $mainPages[$cleanFirstPart];
+    }
+    
+    // For URLs with IDs (lesson/123, subject/456), .htaccess will handle
+    // But add .php to the handler file
+    if (preg_match('/^(lesson|subject|level)\/\d+/', $path)) {
+        return APP_URL . '/' . $path;
+    }
+    
+    // For admin/student/ajax paths, let .htaccess handle
+    if (preg_match('/^(admin|student|ajax)\//', $path)) {
+        return APP_URL . '/' . $path;
+    }
+    
+    // For all other cases, return as is and let .htaccess try to handle
+    return APP_URL . '/' . $path;
 }

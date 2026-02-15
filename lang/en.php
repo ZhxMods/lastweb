@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================
- * English Language File (English)
+ * English Language File (English) - Complete
  * ============================================
  */
 
@@ -36,10 +36,14 @@ return [
     'view' => 'View',
     'view_all' => 'View All',
     'loading' => 'Loading...',
+    'processing' => 'Processing',
+    'go_home' => 'Go Home',
+    'go_back' => 'Go Back',
     
     // User & Authentication
     'welcome' => 'Welcome',
     'welcome_back' => 'Welcome Back',
+    'continue_learning' => 'Continue your learning journey',
     'hello' => 'Hello',
     'email' => 'Email',
     'password' => 'Password',
@@ -69,6 +73,15 @@ return [
     'difficulty' => 'Difficulty',
     'duration' => 'Duration',
     'description' => 'Description',
+    'title' => 'Title',
+    'video_url' => 'Video URL',
+    'content' => 'Content',
+    'order' => 'Order',
+    'views' => 'Views',
+    'actions' => 'Actions',
+    'status' => 'Status',
+    'minutes' => 'minutes',
+    'free' => 'Free',
     
     // Difficulty Levels
     'easy' => 'Easy',
@@ -79,6 +92,8 @@ return [
     'not_started' => 'Not Started',
     'in_progress' => 'In Progress',
     'completed' => 'Completed',
+    'active' => 'Active',
+    'inactive' => 'Inactive',
     
     // Messages
     'success' => 'Success',
@@ -96,16 +111,49 @@ return [
     // Statistics
     'total_lessons' => 'Total Lessons',
     'lessons_completed' => 'Lessons Completed',
+    'lessons_in_progress' => 'Lessons in Progress',
     'total_time_spent' => 'Total Time Spent',
     'average_score' => 'Average Score',
+    'current_level' => 'Current Level',
+    'total_xp' => 'Total XP',
+    'to_next_level' => 'to next level',
+    
+    // Admin Panel
+    'admin_panel' => 'Admin Panel',
+    'main' => 'Main',
+    'users' => 'Users',
+    'manage_users' => 'Manage Users',
+    'manage_lessons' => 'Manage Lessons',
+    'manage_subjects' => 'Manage Subjects',
+    'manage_levels' => 'Manage Levels',
+    'add_new_lesson' => 'Add New Lesson',
+    'edit_lesson' => 'Edit Lesson',
+    'create_edit_lessons' => 'Create and edit lessons',
+    'select_subject' => 'Select subject',
+    'free_lesson' => 'Free lesson',
+    'confirm_delete_lesson' => 'Are you sure you want to delete this lesson?',
+    'user' => 'User',
+    'role' => 'Role',
+    'last_login' => 'Last Login',
+    'never' => 'Never',
+    'total_users' => 'Total Users',
+    'active_users' => 'Active Users',
+    'admins' => 'Administrators',
+    'students' => 'Students',
+    'manage_all_users' => 'Manage all users',
+    'change_language' => 'Change language',
     
     // Footer
     'all_rights_reserved' => 'All Rights Reserved',
     'follow_us' => 'Follow Us',
     'quick_links' => 'Quick Links',
+    'help_support' => 'Help & Support',
+    'documentation' => 'Documentation',
     
     // Hero
     'hero_title' => 'Learn Without Limits with InfinityFree',
+    'hero_title_part1' => 'Learn',
+    'hero_title_part2' => ' without limits',
     'hero_subtitle' => 'A comprehensive learning platform with courses in French, English, and Arabic',
     'get_started' => 'Get Started Free',
     'explore_courses' => 'Explore Courses',
@@ -130,6 +178,7 @@ return [
     'full_name' => 'Full Name',
     'grade_level' => 'Grade Level',
     'select_level' => 'Select your level',
+    'select_your_level' => 'Select your level',
     'confirm_password' => 'Confirm Password',
     'password_requirements' => 'Password must be at least 8 characters',
     'already_registered' => 'Already registered?',
@@ -141,6 +190,7 @@ return [
     'registration_success' => 'Registration successful! You can now login.',
     'login_success' => 'Login successful! Redirecting...',
     'logout_success' => 'Logged out successfully. See you soon!',
+    'lesson_completed' => 'Lesson completed',
     
     // Error Messages
     'registration_failed' => 'Registration failed. Please try again.',
@@ -158,7 +208,46 @@ return [
     'or' => 'or',
     'too_many_attempts' => 'Too many attempts. Please try again later.',
     'invalid_level' => 'Invalid level selected.',
+    'invalid_lesson' => 'Invalid lesson',
+    'lesson_not_found' => 'Lesson not found',
+    'unauthorized_access' => 'Unauthorized access',
+    'account_inactive' => 'Account inactive',
+    'error_occurred' => 'An error occurred',
+    'connection_error' => 'Connection error',
+    'page_not_found' => 'Page Not Found',
+    'page_not_found_message' => 'The page you are looking for does not exist or has been moved.',
+    
+    // Activity & Progress
     'recent_activity' => 'Recent Activity',
-    'lessons_in_progress' => 'Lessons in Progress',
     'no_recent_activity' => 'No recent activity',
+    'no_data' => 'No data available',
+    'no_levels_available' => 'No levels available',
+    'no_subjects_available' => 'No subjects available',
+    'no_lessons_available' => 'No lessons available',
+    'explore_this_level' => 'Explore this level',
+    'back_to_levels' => 'Back to levels',
+    'back_to_level' => 'Back to level',
+    
+    // Lesson Page
+    'anti_cheat_notice' => 'Anti-cheat notice',
+    'please_watch_full_video' => 'Please watch the full video to receive your XP points',
+    'no_skipping_allowed' => 'Video skipping is not allowed',
+    'claim_xp' => 'Claim XP',
+    'complete_lesson_instruction' => 'Complete the lesson to claim your XP points',
+    'xp_already_awarded' => 'XP already awarded for this lesson',
+    'just_now' => 'Just now',
+    'hours' => 'hours',
+    'days' => 'days',
+    
+    // DataTables translations
+    'show' => 'Show',
+    'entries' => 'entries',
+    'showing' => 'Showing',
+    'to' => 'to',
+    'of' => 'of',
+    'no_entries' => 'No entries',
+    'filtered_from' => 'filtered from',
+    'total' => 'total',
+    'first' => 'First',
+    'last' => 'Last',
 ];

@@ -1,7 +1,7 @@
 <?php
 /**
  * ============================================
- * French Language File (Français)
+ * French Language File (Français) - Complete
  * ============================================
  */
 
@@ -36,10 +36,14 @@ return [
     'view' => 'Voir',
     'view_all' => 'Voir tout',
     'loading' => 'Chargement...',
+    'processing' => 'Traitement',
+    'go_home' => 'Retour à l\'accueil',
+    'go_back' => 'Retour',
     
     // User & Authentication
     'welcome' => 'Bienvenue',
     'welcome_back' => 'Bon retour',
+    'continue_learning' => 'Continuez votre apprentissage',
     'hello' => 'Bonjour',
     'email' => 'Email',
     'password' => 'Mot de passe',
@@ -69,6 +73,15 @@ return [
     'difficulty' => 'Difficulté',
     'duration' => 'Durée',
     'description' => 'Description',
+    'title' => 'Titre',
+    'video_url' => 'URL de la vidéo',
+    'content' => 'Contenu',
+    'order' => 'Ordre',
+    'views' => 'Vues',
+    'actions' => 'Actions',
+    'status' => 'Statut',
+    'minutes' => 'minutes',
+    'free' => 'Gratuit',
     
     // Difficulty Levels
     'easy' => 'Facile',
@@ -79,6 +92,8 @@ return [
     'not_started' => 'Non commencé',
     'in_progress' => 'En cours',
     'completed' => 'Terminé',
+    'active' => 'Actif',
+    'inactive' => 'Inactif',
     
     // Messages
     'success' => 'Succès',
@@ -96,16 +111,49 @@ return [
     // Statistics
     'total_lessons' => 'Total des leçons',
     'lessons_completed' => 'Leçons terminées',
+    'lessons_in_progress' => 'Leçons en cours',
     'total_time_spent' => 'Temps total passé',
     'average_score' => 'Score moyen',
+    'current_level' => 'Niveau actuel',
+    'total_xp' => 'XP Total',
+    'to_next_level' => 'jusqu\'au prochain niveau',
+    
+    // Admin Panel
+    'admin_panel' => 'Panneau d\'administration',
+    'main' => 'Principal',
+    'users' => 'Utilisateurs',
+    'manage_users' => 'Gérer les utilisateurs',
+    'manage_lessons' => 'Gérer les leçons',
+    'manage_subjects' => 'Gérer les matières',
+    'manage_levels' => 'Gérer les niveaux',
+    'add_new_lesson' => 'Ajouter une nouvelle leçon',
+    'edit_lesson' => 'Modifier la leçon',
+    'create_edit_lessons' => 'Créer et modifier les leçons',
+    'select_subject' => 'Sélectionner une matière',
+    'free_lesson' => 'Leçon gratuite',
+    'confirm_delete_lesson' => 'Êtes-vous sûr de vouloir supprimer cette leçon ?',
+    'user' => 'Utilisateur',
+    'role' => 'Rôle',
+    'last_login' => 'Dernière connexion',
+    'never' => 'Jamais',
+    'total_users' => 'Total des utilisateurs',
+    'active_users' => 'Utilisateurs actifs',
+    'admins' => 'Administrateurs',
+    'students' => 'Étudiants',
+    'manage_all_users' => 'Gérer tous les utilisateurs',
+    'change_language' => 'Changer de langue',
     
     // Footer
     'all_rights_reserved' => 'Tous droits réservés',
     'follow_us' => 'Suivez-nous',
     'quick_links' => 'Liens rapides',
+    'help_support' => 'Aide et support',
+    'documentation' => 'Documentation',
     
     // Hero
     'hero_title' => 'Apprenez sans limites avec InfinityFree',
+    'hero_title_part1' => 'Apprenez',
+    'hero_title_part2' => ' sans limites',
     'hero_subtitle' => 'Une plateforme d\'apprentissage complète avec des cours en Français, Anglais et Arabe',
     'get_started' => 'Commencer gratuitement',
     'explore_courses' => 'Explorer les cours',
@@ -130,6 +178,7 @@ return [
     'full_name' => 'Nom complet',
     'grade_level' => 'Niveau scolaire',
     'select_level' => 'Sélectionnez votre niveau',
+    'select_your_level' => 'Sélectionnez votre niveau',
     'confirm_password' => 'Confirmer le mot de passe',
     'password_requirements' => 'Le mot de passe doit contenir au moins 8 caractères',
     'already_registered' => 'Déjà inscrit ?',
@@ -141,6 +190,7 @@ return [
     'registration_success' => 'Inscription réussie ! Vous pouvez maintenant vous connecter.',
     'login_success' => 'Connexion réussie ! Redirection...',
     'logout_success' => 'Déconnexion réussie. À bientôt !',
+    'lesson_completed' => 'Leçon terminée',
     
     // Error Messages
     'registration_failed' => 'Échec de l\'inscription. Veuillez réessayer.',
@@ -158,7 +208,46 @@ return [
     'or' => 'ou',
     'too_many_attempts' => 'Trop de tentatives. Veuillez réessayer plus tard.',
     'invalid_level' => 'Niveau invalide sélectionné.',
+    'invalid_lesson' => 'Leçon invalide',
+    'lesson_not_found' => 'Leçon non trouvée',
+    'unauthorized_access' => 'Accès non autorisé',
+    'account_inactive' => 'Compte inactif',
+    'error_occurred' => 'Une erreur s\'est produite',
+    'connection_error' => 'Erreur de connexion',
+    'page_not_found' => 'Page non trouvée',
+    'page_not_found_message' => 'La page que vous recherchez n\'existe pas ou a été déplacée.',
+    
+    // Activity & Progress
     'recent_activity' => 'Activité récente',
-    'lessons_in_progress' => 'Leçons en cours',
     'no_recent_activity' => 'Aucune activité récente',
+    'no_data' => 'Aucune donnée disponible',
+    'no_levels_available' => 'Aucun niveau disponible',
+    'no_subjects_available' => 'Aucune matière disponible',
+    'no_lessons_available' => 'Aucune leçon disponible',
+    'explore_this_level' => 'Explorez ce niveau',
+    'back_to_levels' => 'Retour aux niveaux',
+    'back_to_level' => 'Retour au niveau',
+    
+    // Lesson Page
+    'anti_cheat_notice' => 'Notice anti-triche',
+    'please_watch_full_video' => 'Veuillez regarder la vidéo complète pour recevoir vos points XP',
+    'no_skipping_allowed' => 'Le saut de vidéo n\'est pas autorisé',
+    'claim_xp' => 'Réclamer les XP',
+    'complete_lesson_instruction' => 'Terminez la leçon pour réclamer vos points XP',
+    'xp_already_awarded' => 'XP déjà attribués pour cette leçon',
+    'just_now' => 'À l\'instant',
+    'hours' => 'heures',
+    'days' => 'jours',
+    
+    // DataTables translations
+    'show' => 'Afficher',
+    'entries' => 'entrées',
+    'showing' => 'Affichage de',
+    'to' => 'à',
+    'of' => 'sur',
+    'no_entries' => 'Aucune entrée',
+    'filtered_from' => 'filtré de',
+    'total' => 'total',
+    'first' => 'Premier',
+    'last' => 'Dernier',
 ];

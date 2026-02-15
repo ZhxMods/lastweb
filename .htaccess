@@ -1,6 +1,6 @@
 # ============================================
-# InfinityFree — Production .htaccess
-# PHP 8.2 · Security-Hardened · InfinityFree
+# InfinityFree — Fixed .htaccess
+# PHP 8.2 · Security-Hardened · InfinityFree Compatible
 # ============================================
 
 # Enable Rewrite Engine
@@ -29,13 +29,10 @@
     # Block direct access to sensitive folders
     # ----------------------------------------
     RewriteCond %{REQUEST_URI} ^/includes/ [NC]
-    RewriteRule ^(.*)$ /403.php [L,F]
+    RewriteRule ^(.*)$ index.php [L]
 
     RewriteCond %{REQUEST_URI} ^/lang/ [NC]
-    RewriteRule ^(.*)$ /403.php [L,F]
-
-    RewriteCond %{REQUEST_URI} ^/admin/admin_auth\.php$ [NC]
-    RewriteRule ^(.*)$ /403.php [L,F]
+    RewriteRule ^(.*)$ index.php [L]
 
     # ----------------------------------------
     # Block access to sensitive files globally
@@ -62,60 +59,50 @@
     RewriteCond %{REQUEST_FILENAME} !-d
 
     # ----------------------------------------
-    # Friendly URL Rules
+    # Friendly URL Rules - FIXED FOR INFINITYFREE
     # ----------------------------------------
 
-    # Lesson detail: /lesson/123
-    RewriteRule ^lesson/([0-9]+)/?$ lesson.php?id=$1 [L,QSA]
-
-    # Subject detail: /subject/456
-    RewriteRule ^subject/([0-9]+)/?$ subject.php?id=$1 [L,QSA]
-
-    # Level detail: /level/789
-    RewriteRule ^level/([0-9]+)/?$ level.php?id=$1 [L,QSA]
-
-    # Dashboard
-    RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
-
-    # Profile
-    RewriteRule ^profile/?$ profile.php [L,QSA]
-
-    # Login
-    RewriteRule ^login/?$ login.php [L,QSA]
-
-    # Register
-    RewriteRule ^register/?$ register.php [L,QSA]
-
-    # Logout
-    RewriteRule ^logout/?$ logout.php [L,QSA]
-
-    # Auth (POST handler)
-    RewriteRule ^auth/?$ auth.php [L,QSA]
-
-    # Language switcher
-    RewriteRule ^set_language/?$ set_language.php [L,QSA]
-
-    # Admin panel: /admin/users -> admin/users.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+    # Admin panel pages (must come before other rules)
+    RewriteRule ^admin/?$ admin/dashboard.php [L,QSA]
     RewriteRule ^admin/([a-zA-Z0-9_-]+)/?$ admin/$1.php [L,QSA]
 
-    # Student panel: /student/progress -> student/progress.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+    # Student panel pages
+    RewriteRule ^student/?$ student/dashboard.php [L,QSA]
     RewriteRule ^student/([a-zA-Z0-9_-]+)/?$ student/$1.php [L,QSA]
 
-    # AJAX endpoints: /ajax/complete_lesson -> ajax/complete_lesson.php
-    RewriteCond %{REQUEST_FILENAME} !-f
+    # AJAX endpoints
     RewriteRule ^ajax/([a-zA-Z0-9_-]+)/?$ ajax/$1.php [L,QSA]
 
-    # Hide .php extensions for remaining public pages
+    # Lesson, Subject, Level detail pages
+    RewriteRule ^lesson/([0-9]+)/?$ lesson.php?id=$1 [L,QSA]
+    RewriteRule ^subject/([0-9]+)/?$ subject.php?id=$1 [L,QSA]
+    RewriteRule ^level/([0-9]+)/?$ level.php?id=$1 [L,QSA]
+
+    # Main pages - Add .php extension
+    RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
+    RewriteRule ^profile/?$ profile.php [L,QSA]
+    RewriteRule ^login/?$ login.php [L,QSA]
+    RewriteRule ^register/?$ register.php [L,QSA]
+    RewriteRule ^logout/?$ logout.php [L,QSA]
+    RewriteRule ^auth/?$ auth.php [L,QSA]
+    RewriteRule ^set_language/?$ set_language.php [L,QSA]
+    RewriteRule ^levels/?$ levels.php [L,QSA]
+    RewriteRule ^subjects/?$ subjects.php [L,QSA]
+    RewriteRule ^about/?$ about.php [L,QSA]
+    RewriteRule ^contact/?$ contact.php [L,QSA]
+    RewriteRule ^privacy/?$ privacy.php [L,QSA]
+    RewriteRule ^terms/?$ terms.php [L,QSA]
+    RewriteRule ^help/?$ help.php [L,QSA]
+    RewriteRule ^documentation/?$ documentation.php [L,QSA]
+    RewriteRule ^settings/?$ settings.php [L,QSA]
+
+    # Catch-all for remaining pages (try adding .php)
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME}\.php -f
     RewriteRule ^([^/.]+)/?$ $1.php [L,QSA]
 
     # ----------------------------------------
-    # Error Documents (Blue/White branded)
+    # Error Documents
     # ----------------------------------------
     ErrorDocument 400 /errors/400.php
     ErrorDocument 401 /errors/401.php
@@ -130,38 +117,11 @@
 # Security Headers
 # ============================================
 <IfModule mod_headers.c>
-    # Prevent clickjacking
     Header always set X-Frame-Options "SAMEORIGIN"
-
-    # Prevent MIME sniffing
     Header always set X-Content-Type-Options "nosniff"
-
-    # XSS Protection (legacy browsers)
     Header always set X-XSS-Protection "1; mode=block"
-
-    # Referrer Policy
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-
-    # Content Security Policy
-    # Adjust src lists as you add third-party services
-    Header always set Content-Security-Policy "\
-        default-src 'self'; \
-        script-src 'self' 'unsafe-inline' https://code.jquery.com https://cdn.jsdelivr.net https://cdn.datatables.net https://www.youtube.com https://www.youtube-nocookie.com; \
-        style-src 'self' 'unsafe-inline' https://cdn.datatables.net https://cdn.jsdelivr.net; \
-        frame-src https://www.youtube.com https://www.youtube-nocookie.com; \
-        img-src 'self' data: https:; \
-        font-src 'self' data:; \
-        connect-src 'self'; \
-        form-action 'self'; \
-        base-uri 'self';"
-
-    # HSTS (enable only after you're certain HTTPS works)
-    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-
-    # Permissions Policy (disable unneeded browser features)
-    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
-
-    # Remove server signature
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://code.jquery.com https://cdn.jsdelivr.net https://cdn.datatables.net https://www.youtube.com https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://cdn.datatables.net https://cdn.jsdelivr.net https://fonts.googleapis.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self'; form-action 'self'; base-uri 'self';"
     Header unset Server
     Header unset X-Powered-By
 </IfModule>
@@ -170,30 +130,21 @@
 # PHP Configuration
 # ============================================
 <IfModule mod_php.c>
-    # ---- PRODUCTION SECURITY ----
     php_flag  display_errors         Off
     php_flag  display_startup_errors Off
     php_flag  log_errors             On
     php_value error_log              /tmp/infinityfree_errors.log
     php_value error_reporting        E_ALL
-
-    # ---- Session Security ----
     php_flag  session.cookie_httponly On
     php_flag  session.use_strict_mode On
     php_flag  session.use_only_cookies On
     php_value session.cookie_samesite  Lax
     php_value session.gc_maxlifetime   86400
-
-    # ---- Upload Limits ----
     php_value upload_max_filesize 10M
     php_value post_max_size       12M
-
-    # ---- Performance ----
     php_value memory_limit      128M
     php_value max_execution_time 30
     php_value max_input_time     30
-
-    # ---- Security Hardening ----
     php_flag expose_php Off
 </IfModule>
 
@@ -212,10 +163,7 @@
 # GZIP Compression
 # ============================================
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE \
-        text/html text/plain text/xml text/css text/javascript \
-        application/javascript application/json application/xml \
-        image/svg+xml application/font-woff application/font-woff2
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml application/font-woff application/font-woff2
 </IfModule>
 
 # ============================================
@@ -223,24 +171,16 @@
 # ============================================
 <IfModule mod_expires.c>
     ExpiresActive On
-
-    # Images (long cache)
     ExpiresByType image/jpeg         "access plus 1 year"
     ExpiresByType image/png          "access plus 1 year"
     ExpiresByType image/gif          "access plus 1 year"
     ExpiresByType image/webp         "access plus 1 year"
     ExpiresByType image/svg+xml      "access plus 1 year"
     ExpiresByType image/x-icon       "access plus 1 year"
-
-    # Fonts
     ExpiresByType font/woff2         "access plus 1 year"
     ExpiresByType font/woff          "access plus 1 year"
-
-    # CSS & JS (versioned via ?v= in app, so 1 month is safe)
     ExpiresByType text/css           "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
-
-    # HTML — no cache for PHP pages
     ExpiresByType text/html          "access plus 0 seconds"
 </IfModule>
 
